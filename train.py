@@ -1,6 +1,6 @@
 from transformers import (
     MBartForConditionalGeneration, MBartTokenizer,
-    Seq2SeqTrainingArguments, Seq2SeqTrainer, AutoTokenizer
+    Seq2SeqTrainingArguments, Seq2SeqTrainer, AutoTokenizer, DataCollatorForSeq2Seq
 )
 from accelerate import Accelerator
 import torch
@@ -15,7 +15,7 @@ from data_process import prepare_dataset
 
 
 CHECKPOINT = 'facebook/mbart-large-50-many-to-many-mmt'
-PATH = ''
+PATH = '/kaggle/input/multidomain/'
 max_input_length = 128
 max_target_length = 128
 source_lang = "en"
